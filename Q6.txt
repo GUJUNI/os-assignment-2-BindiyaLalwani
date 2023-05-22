@@ -1,0 +1,119 @@
+NAME		BINDIYA LALWANI
+ROLL NO		20
+SUBJECT		OPERATING SYSTEM
+COURSE		MCA SEM 2
+******************************************************************************************************************************************
+Q6.write a menu driven shell script for remove, rename, copy and modify a file
+
+# Display menu options
+echo "Please select an option:"
+echo "1. Remove a file"
+echo "2. Rename a file"
+echo "3. Copy a file"
+echo "4. Modify a file"
+
+# Read user's choice
+read choice
+
+case $choice in
+    1)
+        # Remove a file
+        echo "Please enter the name of the file to be removed:"
+        read filename
+        rm $filename
+        ;;
+    2)
+        # Rename a file
+        echo "Please enter the name of the file to be renamed:"
+        read oldname
+        echo "Please enter the new name for the file:"
+        read newname
+        mv $oldname $newname
+        ;;
+    3)
+        # Copy a file
+        echo "Please enter the name of the file to be copied:"
+        read sourcefile
+        echo "Please enter the name of the destination file:"
+        read destfile
+        cp $sourcefile $destfile
+        ;;
+    4)
+        # Modify a file
+        echo "Please enter the name of the file to be modified:"
+        read filename
+        echo "Please enter the new content for the file:"
+        read content
+        echo $content > $filename
+        ;;
+    *)
+        # Invalid choice
+        echo "Invalid choice"
+        ;;
+esac
+
+
+OUTPUT
+
+Please select an option:
+1. Remove a file
+2. Rename a file
+3. Copy a file
+4. Modify a file
+1
+Please enter the name of the file to be removed:
+head
+[mca2229@agni ~]$ sh head.sh
+sh: head.sh: No such file or directory
+
+Please select an option:
+1. Remove a file
+2. Rename a file
+3. Copy a file
+4. Modify a file
+2
+Please enter the name of the file to be renamed:
+stream
+Please enter the new name for the file:
+stram
+
+[mca2229@agni ~]$ mv stram.sh stream.sh
+
+Please select an option:
+1. Remove a file
+2. Rename a file
+3. Copy a file
+4. Modify a file
+3
+Please enter the name of the file to be copied:
+city.sh
+Please enter the name of the destination file:
+file.sh
+[mca2229@agni ~]$ cp city.sh file.sh
+[mca2229@agni ~]$ sh file.sh
+Enter the distance between two cities in kilometers:
+700
+Distance in meters: 700000
+Distance in feet: 2296588.00
+Distance in inches: 27559056.00
+Distance in centimeters: 70000000
+
+Please select an option:
+1. Remove a file
+2. Rename a file
+3. Copy a file
+4. Modify a file
+4
+Please enter the name of the file to be modified:
+prime
+Please enter the new content for the file:
+numbers
+
+Enter a number:
+15
+15 is not a prime number
+
+Enter a number:
+25
+25 is not a prime number
+
